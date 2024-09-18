@@ -1,0 +1,16 @@
+
+index_img: /img/homepage.jpg
+katex:
+  enable: true
+  per_page: true
+  hide_scrollbar: true
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/style.css">
+
+beautify:
+  enable: true
+  field: post # site/post
+  title-prefix-icon: '\f52d' # '\f0c1'
+  title-prefix-icon-color: '#F47466'  # '#F47466'

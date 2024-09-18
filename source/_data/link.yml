@@ -1,0 +1,12 @@
+- class_name: Recommended Link
+  class_desc: 我推的鏈結
+  link_list:
+    - name: Shannon's Blog
+      link: https://shannonhung.github.io/
+      avatar: https://i.imgur.com/wolwN6m.png
+      descr: Shannon's Blog
+    - name: Leozzmc's Blog
+      link: https://leozzmc.github.io/
+      avatar: https://i.imgur.com/wolwN6m.png
+      descr: Leozzmc's
+  
