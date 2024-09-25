@@ -1,10 +1,9 @@
 ---
-title: My First Post
+title: EIP 4337
 date: {{ date }}
 cover   : "/img/blockchain.jpg"
 ---
-
-EIP 2938
+Smart Contract
 ===
 偶然間找到之前的筆記，以此記錄一下
 
@@ -16,7 +15,7 @@ EIP 2938
 
 ![](/img/20230319233942.png)
 
-* EIP 4337
+## EIP 4337
 ![EIP 4337](/img/20230319235339.png)
 ### UserOperation
 > User 是 Signer 並不是 Account
@@ -104,17 +103,11 @@ ValidationData{
 | Control |  balance : 餘額，nonce : 歷史交易次數，address : 私鑰的64bytes, 公鑰: 0x+後20bytes公鑰, codeHash: Null, storageRoot | balance: 餘額， nonce : 創建了的合約數量，address: 43bytes，codeHash: 帳戶程式對應之hash值。 storageHash: Merkle Patricia trie Root的Hash值|
 
 
-##### 帳戶抽象化
+#### 帳戶抽象化
 * 將EOA 跟 CA 所提供的功能，整合成一個AA(Account Abstraction)
 * EIP-86 - 2017
 * EIP 2938 - 2020
 * EIP 4337 - 2021
-
-
-##### 4337 優缺點
-
-
-
 
 
 
