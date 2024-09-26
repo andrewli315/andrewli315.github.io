@@ -62,7 +62,7 @@ EntryPoint 可以分成幾個部分
 				* `return ValidationData(address, uint48, uint48)`
 			* `aggregator = data.aggregator`
 			* `outOfTimeRange = block.timestamp > data.validUntil || block.timestamp < data.validAfter;`
-			* `return (aggregator, outOfTimeRange)
+			* `return (aggregator, outOfTimeRange)`
 		* `expectedAggregator == aggregator`
 		* `_getValidationData(paymasterValidationData)`
 		* PayMaster 是一個幫忙付錢執行`UserOperation` 的帳戶 ( suppose 是一個wallet contract )
@@ -117,3 +117,14 @@ ValidationData{
 * 讓使用者保存這些東西可能就是一個可以待解決的問題
 * 託管的話就要考量access control 與託管機構是否真的有效且適當的儲存
 
+### EIP2612
+* `permit` 用來接受 raw transaction
+* 合約接收到後驗證簽章並轉走 ERC20 token
+* 任何人拿到此 transaction 都可以呼叫permit
+* 可以幫我們執行我們預計的 transaction
+	* from XXX
+	* to YYY
+	* ERC 20 token $ z dollar
+	* Signature : r , s , v
+* 呼叫 `permit` 的人需要支付 gas
+* 服務提供者可以透過錢包代管的方式從中扣取手續費
