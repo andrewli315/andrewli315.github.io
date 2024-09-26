@@ -7,7 +7,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://andrewli315.github.io/img/htb4.jpeg">
 <meta property="article:published_time" content="2024-09-26T07:32:51.566Z">
-<meta property="article:modified_time" content="2024-09-26T07:42:12.039Z">
+<meta property="article:modified_time" content="2024-09-26T07:52:33.825Z">
 <meta property="article:author" content="Andrew Li">
 <meta property="article:tag" content="Blockchain SmartContract Exploit">
 <meta name="twitter:card" content="summary">
@@ -147,8 +147,8 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-09-26 15:42:12'
-}</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/htb4.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Andrewli's Note</span></a><a class="nav-page-title" href="/"><span class="site-name">HTB Blockchain Challenge - Locked and Loaded</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">HTB Blockchain Challenge - Locked and Loaded</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-09-26T07:32:51.566Z" title="Created 2024-09-26 15:32:51">2024-09-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-09-26T07:42:12.039Z" title="Updated 2024-09-26 15:42:12">2024-09-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="Lockers-sol">Lockers.sol</h3>
+  postUpdate: '2024-09-26 15:52:33'
+}</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/htb4.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Andrewli's Note</span></a><a class="nav-page-title" href="/"><span class="site-name">HTB Blockchain Challenge - Locked and Loaded</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">HTB Blockchain Challenge - Locked and Loaded</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-09-26T07:32:51.566Z" title="Created 2024-09-26 15:32:51">2024-09-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-09-26T07:52:33.825Z" title="Updated 2024-09-26 15:52:33">2024-09-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="Lockers-sol">Lockers.sol</h3>
 <ul>
 <li>先上程式</li>
 </ul>
@@ -159,7 +159,7 @@
 <li>我們可以直接去找 tx 來取得當初設定的資料</li>
 <li><code> cast block --rpc-url http://188.166.175.58:32088/rpc 1</code></li>
 <li><code> cast tx --rpc-url http://188.166.175.58:32088/rpc &#123;tx_hash&#125;</code></li>
-<li><code>cast call --rpc-url http://188.166.175.58:32088/rpc --private-key 0xcf1fdf2f99395ffa88e67cc7265ea69a6ad9c6224118058e9a822eab47db6eab 0x5E0117F535D516a0DF81960890005AA012d43124 &quot;viewItems(string)&quot; &quot;&#123;Item.name&#125;&quot; </code></li>
+<li><code>cast call --rpc-url http://188.166.175.58:32088/rpc --private-key &#123;&#123;private key&#125;&#125; 0x5E0117F535D516a0DF81960890005AA012d43124 &quot;viewItems(string)&quot; &quot;&#123;Item.name&#125;&quot;</code></li>
 <li>工人智慧解析一下之後可以得到以下資訊</li>
 </ul>
 <table>
