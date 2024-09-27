@@ -2,6 +2,7 @@
 title: HTB Blockchain Challenge - Honor Among Thieves
 date: {{ date }}
 cover   : "/img/htb1.jpeg"
+tags: Blockchain SmartContract Exploit
 ---
 
 Honor Among Thieves
@@ -94,7 +95,7 @@ contract Rivals {
 
 * 可以知道 `_key` 就是 `0xdff33a1b2c1b6333553e4e280f600886993e5469e05b4931c5c19c93fce7b58f`
 
-* 解題`cast send --rpc-url http://159.65.20.166:31168/rpc --private-key "0x8746fad80df99a853573ed2ab842a08a2bde1724343e19ec6f867d77ff776993" 0xaFB86492DD72903c3cE48761613cF3EB59dAde7d "talk(bytes32)"  0xdff33a1b2c1b6333553e4e280f600886993e5469e05b4931c5c19c93fce7b58f`
+* 解題`cast send --rpc-url http://159.65.20.166:31168/rpc --private-key {{private key}} 0xaFB86492DD72903c3cE48761613cF3EB59dAde7d "talk(bytes32)"  0xdff33a1b2c1b6333553e4e280f600886993e5469e05b4931c5c19c93fce7b58f`
 * 確認成功
-* `cast call --rpc-url http://159.65.20.166:31168/rpc --private-key "0x8746fad80df99a853573ed2ab842a08a2bde1724343e19ec6f867d77ff776993" 0x3CBC547eE5EF958791108f27Fd541c88D9AB143E "isSolved(address)" 0x3c8abBf477294512FC9ba8F911a0aFC6868dd2AF`
+* `cast call --rpc-url http://159.65.20.166:31168/rpc --private-key {{private key}} 0x3CBC547eE5EF958791108f27Fd541c88D9AB143E "isSolved(address)" 0x3c8abBf477294512FC9ba8F911a0aFC6868dd2AF`
 ![image](https://hackmd.io/_uploads/S16uhicOT.png)

